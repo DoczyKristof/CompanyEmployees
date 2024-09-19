@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Contracts;
+using LoggerService;
+using System.Runtime.CompilerServices;
 
 namespace CompanyEmployees.Extensions
 {
@@ -20,5 +22,9 @@ namespace CompanyEmployees.Extensions
             {
 
             });
+
+        //Logger service configmentthing
+        public static void ConfigureLoggerService(this IServiceCollection services) =>
+            services.AddSingleton<ILoggerManager, LoggerManager>();
     }
 }
