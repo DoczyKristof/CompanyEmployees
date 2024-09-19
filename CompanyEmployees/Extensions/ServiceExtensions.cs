@@ -1,4 +1,6 @@
-﻿namespace CompanyEmployees.Extensions
+﻿using System.Runtime.CompilerServices;
+
+namespace CompanyEmployees.Extensions
 {
     public static class ServiceExtensions
     {
@@ -10,6 +12,13 @@
                 builder.AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
+            });
+
+        //IIS
+        public static void ConfigureIISIntegration(this IServiceCollection services) =>
+            services.Configure<IISOptions>(options =>
+            {
+
             });
     }
 }
