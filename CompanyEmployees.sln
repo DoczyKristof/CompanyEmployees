@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{7593E6D7-6B6D-40A2-8073-FA6BF34D4B42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{7593E6D7-6B6D-40A2-8073-FA6BF34D4B42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareExample", "MiddlewareExample\MiddlewareExample.csproj", "{BE7317F3-F888-4C0A-8FB6-955729CE4BCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7593E6D7-6B6D-40A2-8073-FA6BF34D4B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7593E6D7-6B6D-40A2-8073-FA6BF34D4B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7593E6D7-6B6D-40A2-8073-FA6BF34D4B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7317F3-F888-4C0A-8FB6-955729CE4BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7317F3-F888-4C0A-8FB6-955729CE4BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7317F3-F888-4C0A-8FB6-955729CE4BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7317F3-F888-4C0A-8FB6-955729CE4BCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
