@@ -16,7 +16,9 @@ builder.Services.AddControllers(config =>
         config.ReturnHttpNotAcceptable = true;
     })
     .AddXmlDataContractSerializerFormatters()
+    .AddCustomCsvFromatter()
     .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
+
 builder.Services.ConfigureCors();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureIISIntegration();
