@@ -13,6 +13,7 @@ LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentD
 builder.Services.AddControllers(config =>
     {
         config.RespectBrowserAcceptHeader = true;
+        config.ReturnHttpNotAcceptable = true;
     })
     .AddXmlDataContractSerializerFormatters()
     .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
