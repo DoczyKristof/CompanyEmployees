@@ -47,7 +47,7 @@ namespace CompanyEmployees
 
         private static void FormatCsv(StringBuilder buffer, CompanyDto company)
         {
-            buffer.AppendLine($"{company.Id},\"{company.Name},\"{company.FullAddress}\"");
+            buffer.AppendLine(company.ToString());
         }
     }
 }
