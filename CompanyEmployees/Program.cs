@@ -1,4 +1,5 @@
 using CompanyEmployees.Extensions;
+using CompanyEmployees.Presentation.ActionFilters;
 using Contracts;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,8 @@ NewtonsoftJsonInputFormatter GetJsonPatchInputFormatter() =>
     .GetRequiredService<IOptions<MvcOptions>>()
     .Value.InputFormatters
     .OfType<NewtonsoftJsonInputFormatter>().First();
+
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 builder.Services.AddControllers(config =>
     {
