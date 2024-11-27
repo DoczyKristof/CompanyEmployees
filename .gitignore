@@ -13,6 +13,12 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Ignore internal_folder and its contents
+CompanyEmployees/internal_logs/
+
+# Ignore internallogs.txt specifically
+CompanyEmployees/internal_logs/internallog.txt
+
 # Mono auto generated files
 mono_crash.*
 
