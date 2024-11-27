@@ -14,5 +14,6 @@
             set { _pageSzize = (value > MAXPAGESIZE) ? MAXPAGESIZE : value; }
         }
 
+        public string? OrderBy { get; set; }
     }
 }
