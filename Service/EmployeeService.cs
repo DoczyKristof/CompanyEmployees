@@ -67,6 +67,9 @@ namespace Service
 
         public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetEmployeesAsync(Guid companyid, EmployeeParameters employeeParameters, bool trackChanges)
         {
+            if (!employeeParameters.ValidAgeRange)
+                throw new MaxAgeRangeBadRequestException();
+
             await CheckIfCompanyExists(companyid, trackChanges);
 
             var employeesWithMetaData = await _repository.Employee.GetEmployeesAsync(companyid, employeeParameters, trackChanges);
