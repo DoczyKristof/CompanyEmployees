@@ -68,7 +68,7 @@ namespace CompanyEmployees.Extensions
                 if (xmlOutputFormatter is not null)
                 {
                     xmlOutputFormatter.SupportedMediaTypes
-                    .Add("application/vnd.codemaze.hateoas+json");
+                    .Add("application/vnd.codemaze.hateoas+xaml");
                 }
             });
         }
