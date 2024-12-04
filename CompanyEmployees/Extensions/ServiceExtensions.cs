@@ -52,7 +52,7 @@ namespace CompanyEmployees.Extensions
             services.Configure<MvcOptions>(config =>
             {
                 var systemTextJsonOutputFormatter = config.OutputFormatters
-                    .OfType<SystemTextJsonInputFormatter>()?
+                    .OfType<SystemTextJsonOutputFormatter>()?
                     .FirstOrDefault();
 
                 if (systemTextJsonOutputFormatter is not null)

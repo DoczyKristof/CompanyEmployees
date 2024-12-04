@@ -76,12 +76,14 @@ namespace CompanyEmployees.Utility
 
         private bool ShouldGenerateLinks(HttpContext httpContext)
         {
-            var mediaType = (MediaTypeHeaderValue)httpContext.Items["AcceptHeaderMediaType"];
-
-            return mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase);
+            if (MediaTypeHeaderValue.TryParse(httpContext.Items["AcceptHeaderMediaType"].ToString(), out var mediaType))
+            {
+                return mediaType.SubTypeWithoutSuffix.EndsWith("hateoas", StringComparison.InvariantCultureIgnoreCase);
+            }
+            return false;
         }
 
-        private List<Entity> ShapeData(IEnumerable<EmployeeDto> employeesDto, string fields) => 
+        private List<Entity> ShapeData(IEnumerable<EmployeeDto> employeesDto, string fields) =>
             _dataShaper.ShapeData(employeesDto, fields)
             .Select(e => e.Entity)
             .ToList();
