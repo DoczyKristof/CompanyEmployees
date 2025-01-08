@@ -25,6 +25,7 @@ namespace CompanyEmployees.Extensions
                         {
                             NotFoundException => StatusCodes.Status404NotFound,
                             BadRequestException => StatusCodes.Status400BadRequest,
+                            RoleNotExistsException => StatusCodes.Status418ImATeapot,
                             _ => StatusCodes.Status500InternalServerError
                             //ez pl kérdőjel ikszdé
                         };
