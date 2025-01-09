@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Repository;
 using Service;
 using Service.Contracts;
@@ -180,7 +181,45 @@ namespace CompanyEmployees.Extensions
             });
         }
 
-        public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration) 
+        public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration)
             => services.Configure<JwtConfiguration>(configuration.GetSection("JwtSettings"));
+
+
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen
+            (
+                s =>
+                {
+                    s.SwaggerDoc("v1", new OpenApiInfo { Title = "KristapistAPI", Version = "v1" });
+                    s.SwaggerDoc("v2", new OpenApiInfo { Title = "KristapistAPI", Version = "v2" });
+
+                    s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        In = ParameterLocation.Header,
+                        Description = "JWT with bearer",
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer"
+                    });
+
+                    s.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                },
+                                Name = "Bearer"
+                            },
+                            new List<string>()
+                        }//kérdőjelek ezrei
+                    });
+                }
+            );
+        }
     }
 }
