@@ -16,7 +16,7 @@ namespace CompanyEmployees.Presentation.Controllers
 
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _service.AuthenticationService.GetUsersAsync();
