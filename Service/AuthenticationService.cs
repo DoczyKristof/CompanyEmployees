@@ -26,7 +26,8 @@ namespace Service
         private readonly JwtConfiguration _jwtConfiguration;
 
         private User? _user;
-
+        
+        //Ioptionsmonitor for live reloading
         public AuthenticationService(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IOptions<JwtConfiguration> configuration, RoleManager<IdentityRole> roleManager)
         {
             _logger = logger;
